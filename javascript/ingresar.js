@@ -46,7 +46,7 @@ function validar() {
     let usuarioNoEncontrado = !( users.some((user) => user.user=== inputUser&& user.password===inputPass))
   
     if (usaurioOContraceñaVacio) {
-        alert('Error en usuario y/o contraseña');
+        alert('El usuario y la contraseña son obligatorios');
     } else if (contraseñaLargoIncorrecto) {
         alert('La contraseña debe tener 8 caracteres');
     }
