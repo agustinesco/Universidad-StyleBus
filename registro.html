@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrarse - StyleBus</title>
+  <link rel="shortcut icon" href="./imgs/Please.png">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="./leaflet/leaflet.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.Default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/chat.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/typing.css">
+  <script src="javascript/jquery.min.js"></script>
+  <script src="./leaflet/leaflet.js"></script>
+  <script src="./leaflet/leaflet.markercluster-src.js"></script> 
+  <script src="javascript/armado.js"></script>
+  <!--<script src="javascript/mercadoLibre.js"></script> -->
+</head>
+<body>
+   <!-- Barra de Navegacion de arriba -->
+   <div id='barraNavegacion' ></div>
+   <!-- Aca termina la barar de navegacion -->
+
+   
+   
+
+<div class="todo">
+  <div class="container">
+
+    <!-- Chatbot -->
+    <div class="chatbox">
+      <div class="chatbox__support">
+          <div class="chatbox__header">
+              <div class="chatbox__image--header">
+                  <img src="./images/Please.png" alt="image">
+              </div>
+              <div class="chatbox__content--header">
+                  <h4 class="chatbox__heading--header">Botibus</h4>
+                  <p class="chatbox__description--header">Chat de consultas a Botibus</p>
+              </div>
+          </div>
+          <div class="chatbox__messages">
+              <div>
+                  <div class="messages__item messages__item--visitor">
+                      Hola, podés ayudarme?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Por supuesto!
+                  </div>
+                  <div class="messages__item messages__item--visitor">
+                      Puedo comprar pasajes sin tarjeta de crédito?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Claro.. al seleccionar el método de pago, poné que pagas con efectivo. Después haces un pago en RapiPago
+                  </div>
+                  <div class="messages__item messages__item--typing">
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="chatbox__footer">
+              <img src="./images/icons/emojis.svg" alt="">
+              <img src="./images/icons/microphone.svg" alt="">
+              <input type="text" placeholder="Mensaje...">
+              <p class="chatbox__send--footer">Send</p>
+              <img src="./images/icons/attachment.svg" alt="">
+          </div>
+      </div>
+      <div class="chatbox__button">
+          <button>button</button>
+      </div>
+    </div>
+  <!-- termina Chatbot -->
+
+
+
+    <div class="table-wrapper">
+    <div class="row">
+      <div class="col-sm-12">                    
+        <p><a href="PaginaPrincipal.html">Inicio</a>&nbsp; / &nbsp; Registrarse</p>
+    </div>
+      <!-- Barra de la izquierda -->
+      
+      <div class="col-lg-4">
+        <h1 class="titulo">Registrarse</h1>
+      </div>
+      <!-- Fin barra de la izquierda-->
+
+      <!-- Info de la derecha -->
+      <div class="col-lg-8" >
+        <form>
+
+        <div class="row">
+
+          <div class="col-lg-12" >
+            <h3>Ingresá tus datos para registrarte</h3>
+          </div>
+
+        <div class="col-sm-6" ><br>
+          <label>Nombre*</label>
+          <input class="tf w-input" name="nombre" id="nombre" onkeypress="return check(event)" type="text" placeholder="Ingrese el nombre" required >
+        </div>
+        <div class="col-sm-6" ><br>
+          <label>Apellido*</label>
+          <input class="tf w-input" name="apellido" id="apellido"  onkeypress="return check(event)" type="text" placeholder="Ingrese el apellido" required>
+        </div>
+
+        <div class="col-lg-12" ><br>
+          <h6>Dirección:</h6>
+        </div>
+          <div class="col-sm-6">
+            <label>Calle*</label>
+            <input type="text" class="tf w-input" name="direccionCalle" id="direccionCalle" onkeypress="return check(event)" placeholder="Ingrese la calle" required>   
+          </div>    
+          <div class="col-sm-6">
+            <label>Número*</label>
+            <input type="text" class="tf w-input" name="direccionNum" id="direccionNum" placeholder="Ingrese el domicilio" required > 
+          </div>    
+          
+
+
+        <div class="col-sm-6" ><br>
+          <label>Número de Documento*</label>
+          <input type="text" name="docu" id="docu" required>
+        </div>
+
+        <div class="col-sm-6" ><br>
+          <label>Fecha de Nacimiento*</label>
+          <input type="date" name="nacimiento" id="nacimiento" required>
+        </div>
+
+        <div class="col-lg-12" ><br><hr><br>
+          <h5>PAGO*</h5>
+        </div>
+
+        <div class="col-lg-12" ><br>
+          <h5>Forma de Pago*</h5>
+
+          <div class="form-check" id="tarjeta" >
+            <input  type="checkbox"  id="categ1" enable>
+            <label class="form-check-label" > Tarjeta de Crédito/débito </label>
+          </div>
+          <div class="form-check" id="cuentaBancaria">
+            <input  type="checkbox"  id="categ2" enable>
+            <label class="form-check-label" > Cuenta Bancaria/Mercado Pago </label>
+          </div>
+  
+        </div>
+
+        <div class="col-lg-12" ><hr><br>
+          <label>Tarjeta de crédito/débito</label><br>
+          <label>Nombre como figura en la tarjeta</label>
+          <input class="form-control" name="nombreTarjeta" id="nombreTarjeta" disabled><br>
+          <label>Número</label>
+          <input type="text" id="numTarjeta" disabled>
+          <label>Fecha de Vencimiento*</label>
+          <input type="date" id="fechaTarjeta" disabled>
+          <label>Código</label>
+          <input class="form-control" name="codTarjeta" id="codTarjeta" type="password" disabled/>
+        </div>
+
+        <div class="col-lg-12" ><hr><br>
+          <label>Cuenta bancaria o MercadoPago</label><br>
+          <label>CBU/CVU</label>
+          <input type="text" id="cargarCBU" class="input" placeholder=" " disabled><br>
+        </div>
+
+        <div class="col-lg-12" ><hr><br>
+          <label>Correo Electrónico *</label>
+          <input class="form-control" name="correo" id="correo" required><br>
+        </div>
+
+        <div class="col-lg-12" >
+          <label>Contraseña</label>
+          <input class="form-control" name="password" id="password" type="password"/>
+        </div>
+        <div class="col-md-9">
+          <small> La contraseña debe tener 7 caracteres como mínimo y por lo menos un caracter especial y una mayúscula</small> <br>
+        </div>   
+        
+        <div class="col-lg-12"><hr><br>
+          <h5>Adjuntar Foto de Perfil (opcional)</h5>
+          <input type="file" id="adjunto" name="adjunto" >
+      </div>
+
+      <div class="col-lg-12" ><br>
+        <div class="form-check" id="cursos" required>
+          <input class="form-check-input" type="checkbox" value="" id="categ1">
+          <label class="form-check-label" > Deseo recibir promociones y descuentos </label>
+        </div>
+      </div>
+        
+        <div class="col-lg-12" > <hr>
+          <a  class="btn btn-success btn-block enable" id="enviar" onclick="validar() ">Inscribirse</a>
+          <small>Los campos con un * son obligatorios</small>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <div id='footer' ></div>
+  <!-- fin footer -->
+  
+    <script src="javascript/registrarse.js"></script>
+    <script src="./assets/js/Chat.js"></script>
+<script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buscar Viaje</title>
+  <link rel="shortcut icon" href="./imgs/SB.png">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="./leaflet/leaflet.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.Default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/chat.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/typing.css">
+  <script src="javascript/jquery.min.js"></script>
+  <script src="./leaflet/leaflet.js"></script>
+  <script src="./leaflet/leaflet.markercluster-src.js"></script> 
+  <script src="json/listaViajes.js"></script>
+  <script src="javascript/armado.js"></script>
+</head>
+<body>
+
+  <!-- Barra Menú -->
+  <div id='barraNavegacion' ></div>
+  <!-- Fin -->
+
+<div class="todo">
+  <div class="container">
+
+    <!-- Chatbot -->
+    <div class="chatbox">
+      <div class="chatbox__support">
+          <div class="chatbox__header">
+              <div class="chatbox__image--header">
+                  <img src="./images/Please.png" alt="image">
+              </div>
+              <div class="chatbox__content--header">
+                  <h4 class="chatbox__heading--header">Botibus</h4>
+                  <p class="chatbox__description--header">Chat de consultas a Botibus</p>
+              </div>
+          </div>
+          <div class="chatbox__messages">
+              <div>
+                  <div class="messages__item messages__item--visitor">
+                      Hola, podés ayudarme?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Por supuesto!
+                  </div>
+                  <div class="messages__item messages__item--visitor">
+                      Puedo comprar pasajes sin tarjeta de crédito?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Claro.. al seleccionar el método de pago, poné que pagas con efectivo. Después haces un pago en RapiPago
+                  </div>
+                  <div class="messages__item messages__item--typing">
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="chatbox__footer">
+              <img src="./images/icons/emojis.svg" alt="">
+              <img src="./images/icons/microphone.svg" alt="">
+              <input type="text" placeholder="Mensaje...">
+              <p class="chatbox__send--footer">Enviar</p>
+              <img src="./images/icons/attachment.svg" alt="">
+          </div>
+      </div>
+      <div class="chatbox__button">
+          <button>button</button>
+      </div>
+    </div>
+  <!-- termina Chatbot -->
+
+  <div class="table-wrapper">
+    <div class="row">
+      <div class="col-sm-12">                    
+        <p><a href="PaginaPrincipal.html">Inicio</a>&nbsp; / &nbsp; Buscar Viaje</p>
+    </div>
+
+      <!-- Filtros -->
+      <div class="col-lg-12" >
+        <form> 
+          <h2>Buscar Viaje</h2>
+          <h6>Primero debe seleccionar una fecha</h6>
+      <div class=row>
+        <div class="col-md-4" ><br>
+          <label>Fecha de Salida</label>
+          <input type="date" name="fechaSalida" id="fechaSalida" required>
+        </div>
+        <div class="col-md-4" ><br>
+          <label>Fecha de Regreso</label>
+          <input type="date" name="fechaRegreso" id="fechaRegreso" required>
+        </div>
+        <div class="col-md-6">
+          <select name="filtroorigen" id="filtroorigen" class='form-control' onchange="mostrar()" required>
+                <option value="">Origen</option>
+                <option value="BsAs">Buenos Aires</option>
+                <option value="Salta">Salta</option>
+                <option value="Rosario">Rosario</option>        
+          </select>
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="filtronombre" placeholder="Destino" onkeyup="mostrar()"> <br>
+          </div>
+        
+          
+          <div class="col-md-6">
+          <select name="filtroservicio" id="filtroservicio" class='form-control' onchange="mostrar()" required>
+                <option value="">Por Servicio</option>
+                <option value="Premium">Premium</option>
+                <option value="Standar Plus">Standar Plus</option>
+                <option value="Standar">Standar</option>        
+          </select>
+          </div>
+          
+          <div class="col-md-6">
+            <select name="filtroida" id="filtroida" class='form-control' onchange="mostrar()" required> <br>
+                  <option value="">Ida/Vuelta</option>
+                  <option value="Ida">Ida</option>
+                  <option value="IdaVuelta">Ida y Vuelta</option>
+                  
+              </select>
+          </div>
+          <div class="col-sm-3"><br>
+            <input type="number" class="form-control" id="filtroCantPasaj" placeholder="Cantidad de Pasajeros" onkeyup="mostrar()" min="1"oninput="this.value = 
+            !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"> <br>
+            </div>
+            
+          </div>
+        </div>
+
+          <!-- Fin filtros-->
+        <hr>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-7">
+              <div id="mapid" > <!-- Para dibujar el mapa -->
+              </div>
+              <a onclick="mostrar()" href='#'>Volver al Mapa Principal</a>
+              <div class="form-group">
+
+                <a class="btn btn-success btn-block enable" onclick="comprar()"> <b>Comprar</b></a>
+                <a href="carrito.html" class="btn btn-dark btn-block"> <b>Agregar al carrito</b></a>
+                <a href="buscarExcursion.html" class="btn btn-dark btn-block"> <b>Agregar Excursiones</b></a>
+                <hr>
+              </div>
+            </div>
+            <div class="col-md-5" id='columnaArtesanías'> 
+              <div id="verartesanías"></div> <!-- Resultados de mostrar() en buscarArtesanía.js-->
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+  <!-- Footer -->
+  <div id='footer' ></div>
+  <!-- Fin -->
+
+  <script src="javascript/buscarViaje.js"></script>
+  <script src="./assets/js/Chat.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

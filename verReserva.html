@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva - StyleBus</title>
+  <link rel="shortcut icon" href="./imgs/Please.png">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="./leaflet/leaflet.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.css">
+  <link rel="stylesheet" href="./leaflet/MarkerCluster.Default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/chat.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/typing.css">
+  <script src="javascript/jquery.min.js"></script>
+  <script src="./leaflet/leaflet.js"></script>
+  <script src="./leaflet/leaflet.markercluster-src.js"></script> 
+  <script src="javascript/armado.js"></script>
+  <!--<script src="javascript/mercadoLibre.js"></script> -->
+</head>
+<body>
+   <!-- Barra de Navegacion de arriba -->
+   <div id='barraNavegacion' ></div>
+   <!-- Aca termina la barar de navegacion -->
+
+   
+   
+
+<div class="todo">
+  <div class="container">
+
+    <!-- Chatbot -->
+    <div class="chatbox">
+      <div class="chatbox__support">
+          <div class="chatbox__header">
+              <div class="chatbox__image--header">
+                  <img src="./images/Please.png" alt="image">
+              </div>
+              <div class="chatbox__content--header">
+                  <h4 class="chatbox__heading--header">Botibus</h4>
+                  <p class="chatbox__description--header">Chat de consultas a Botibus</p>
+              </div>
+          </div>
+          <div class="chatbox__messages">
+              <div>
+                  <div class="messages__item messages__item--visitor">
+                      Hola, podés ayudarme?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Por supuesto!
+                  </div>
+                  <div class="messages__item messages__item--visitor">
+                      Puedo comprar pasajes sin tarjeta de crédito?
+                  </div>
+                  <div class="messages__item messages__item--operator">
+                      Claro.. al seleccionar el método de pago, poné que pagas con efectivo. Después haces un pago en RapiPago
+                  </div>
+                  <div class="messages__item messages__item--typing">
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                      <span class="messages__dot"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="chatbox__footer">
+              <img src="./images/icons/emojis.svg" alt="">
+              <img src="./images/icons/microphone.svg" alt="">
+              <input type="text" placeholder="Mensaje...">
+              <p class="chatbox__send--footer">Send</p>
+              <img src="./images/icons/attachment.svg" alt="">
+          </div>
+      </div>
+      <div class="chatbox__button">
+          <button>button</button>
+      </div>
+    </div>
+  <!-- termina Chatbot -->
+
+
+
+    <div class="table-wrapper">
+    <div class="row">
+      <div class="col-sm-12">                    
+        <p><a href="PaginaPrincipal.html">Inicio</a>&nbsp; / &nbsp; Buscar Viaje</a>&nbsp; / &nbsp; Completar Viaje</a>&nbsp; / &nbsp; Visualizar Reserva</p>
+    </div>
+      <!-- Barra de la izquierda -->
+      
+      <div class="col-lg-4">
+        <h1 class="titulo">Reserva</h1>
+      </div>
+      <!-- Fin barra de la izquierda-->
+
+      <!-- Info de la derecha -->
+      <div class="col-lg-8" >
+        <form>
+
+        <div class="row">
+
+          <div class="col-lg-12" ><hr><br>
+            <h3>Viaje 1: Salta</h3>
+          </div>
+          <div class="col-lg-12" >
+            <h5>Origen: Retiro, Buenos Aires  Destino: Salta, Salta</h5>
+            <h5>Salida: 23/01/2023 08hs   Llegada: 23/01/2023 13hs</h5>
+            <h5>Pasajero: Juan Fernández  DNI: 45342234 </h5>
+            <h5>Menor de edad</h5>
+            <h5>Precio $14.000</h5>
+          </div>
+
+          <div class="col-lg-12" ><hr><br>
+            <h3>Viaje 2: Salta</h3>
+          </div>
+          <div class="col-lg-12" >
+            <h5>Origen: Retiro, Buenos Aires  Destino: Salta, Salta</h5>
+            <h5>Salida: 23/01/2023 08hs   Llegada: 23/01/2023 13hs</h5>
+            <h5>Pasajero: Sofía López  DNI: 33342234 </h5>
+            <h5>Precio: $14.000</h5>
+          </div>
+
+          <div class="col-lg-12" ><br>
+          </div>
+          <div class="col-lg-12" >
+            <h5>_____________________________________________________</h5>
+            <h5>Total: $28.000</h5>
+          </div>
+        
+          <div class="col-md-5"><br>
+            <a href="verReserva.html" class="btn btn-dark btn-block"> <b>Ir al Pago</b></a>
+            <a href="PaginaPrincipal.html" class="btn btn-dark btn-block"> <b>Cancelar</b></a>
+            <hr>
+          </div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <div id='footer' ></div>
+  <!-- fin footer -->
+  
+    <script src="javascript/cargarArtesania.js"></script>
+    <script src="./assets/js/Chat.js"></script>
+<script src="./app.js"></script>
+</body>
+
+</html>

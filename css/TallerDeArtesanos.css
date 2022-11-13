@@ -1,0 +1,121 @@
+#mapaid{
+ position: relative;
+  background: #cccccc;
+  height: 500px; 
+  width: 500px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  margin: 10px 7px 10px 0px;
+
+}
+#busqueda_taller{
+  color: rgb(34, 194, 243);
+  margin: 20px;
+  float: left;
+  width: 33%;
+  padding: 5px;
+ 
+
+}
+#subt{
+  color: rgb(34, 194, 243); 
+}
+#intro{
+  float:left;
+  padding: 12px;
+  margin: 5px;
+}
+#img{
+  float:left;
+  padding: 12px;
+  margin: 5px;
+}
+body{
+  background-color: rgb(128, 83, 83);
+}
+
+.registros{
+  color: beige;
+  text-align: right;
+}
+.actualizacion{
+  color: beige; 
+}
+.texto{
+  
+  color: beige;
+  text-align: left;
+}
+.center{
+   margin: auto;
+    width: 50%;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.BarraDeBusqueda{
+  text-align: right;
+
+}
+.boton {
+  color: beige;
+  background-color: rgb(5, 5, 48);
+
+
+}
+#letrasLabel{
+  color: aliceblue;
+}
+form{
+  text-align: left;
+}
+.fondo{
+  background:rgb(230, 80, 22);
+  background-image: none;
+}
+
+#anuncio{
+  color: beige;
+  background-color: rgb(230, 80, 22);
+  border-color: #cccccc;
+}
+       
+*{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+}
+#menu li a{
+  background-color: rgb(60, 36, 26);
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  min-width: 100px;
+  font-family: Arial; 
+  text-decoration: none;
+  float: left;
+  padding: 10px;
+ 
+  
+}
+#menu li a:hover{
+  color: #000;
+  background-color: #eaeaea;
+}
+#menu li{
+  float: left;
+  text-align:center
+}
+#menu li ul{
+  display: none;
+}
+#menu li:hover ul {
+  display:block;
+}

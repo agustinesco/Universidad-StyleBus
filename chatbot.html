@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buscar Viaje</title>
+  <link rel="shortcut icon" href="./imgs/Please.png">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="./leaflet/leaflet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/chat.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/typing.css">
+  
+
+  <script src="javascript/jquery.min.js"></script>
+  <script src="./leaflet/leaflet.js"></script>
+  <script src="./leaflet/leaflet.markercluster-src.js"></script> 
+  <script src="json/listaArtesanías.js"></script>
+  <script src="javascript/armado.js"></script>
+</head>
+<body>
+
+  <!-- Barra Menú -->
+  <div id='barraNavegacion' ></div>
+  <!-- Fin -->
+
+  <div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="./images/Please.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Botibus</h4>
+                    <p class="chatbox__description--header">Chat de consultas a Botibus</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div>
+                    <div class="messages__item messages__item--visitor">
+                        Hola, podés ayudarme?
+                    </div>
+                    <div class="messages__item messages__item--operator">
+                        Por supuesto!
+                    </div>
+                    <div class="messages__item messages__item--visitor">
+                        Puedo comprar pasajes sin tarjeta de crédito?
+                    </div>
+                    <div class="messages__item messages__item--operator">
+                        Claro.. al seleccionar el método de pago, poné que pagas con efectivo. Después haces un pago en RapiPago
+                    </div>
+                    <div class="messages__item messages__item--typing">
+                        <span class="messages__dot"></span>
+                        <span class="messages__dot"></span>
+                        <span class="messages__dot"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbox__footer">
+                <img src="./images/icons/emojis.svg" alt="">
+                <img src="./images/icons/microphone.svg" alt="">
+                <input type="text" placeholder="Write a message...">
+                <p class="chatbox__send--footer">Send</p>
+                <img src="./images/icons/attachment.svg" alt="">
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button>button</button>
+        </div>
+    </div>
+</div>
+<script src="./assets/js/Chat.js"></script>
+<script src="./app.js"></script>
+
+</body>
+</html>
