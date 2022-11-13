@@ -2,5 +2,5 @@ window.onload = irAlIndex();
 
 
 function irAlIndex() {
-    setTimeout("location.href='PaginaPrincipal.html'", 5000);
+    setTimeout("location.href='index.html'", 5000);
   }

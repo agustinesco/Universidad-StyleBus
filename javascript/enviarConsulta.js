@@ -38,7 +38,7 @@ function validar(){
             if( $("#reclamo").val() == ''){
                 alert('Debe ingresar los datos marcados con *');
             } else{
-    location.href ="PaginaPrincipal.html";
+    location.href ="index.html";
 
                 }
             }
