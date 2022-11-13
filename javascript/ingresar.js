@@ -19,7 +19,7 @@ const users = [{
 //funcion que valida que este el mail para recuperar la contraseña
 function validarRecupero() {
     let inputUser =  $("#nombreusuario").val()
-    var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    let expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
     if ((inputUser == '')) {
         alert('Debe ingresar un correo para recuperar la contraseña');
@@ -34,10 +34,10 @@ function validarRecupero() {
 
 //funcion que valida que este todo completo para cargar
 function validar() {
-    var inputPass = $("#password").val();
-    var inputUser = $("#nombreusuario").val();
-    var exprUsuario = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var exprContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    let inputPass = $("#password").val();
+    let inputUser = $("#nombreusuario").val();
+    let exprUsuario = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    let exprContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
    
     let usaurioOContraceñaVacio = (inputUser == '') || (inputPass == '')
     let contraseñaLargoIncorrecto = inputPass.length !== 8
