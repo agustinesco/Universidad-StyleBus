@@ -2,6 +2,7 @@
 window.onload = mostrar();
 var ok_comprar = false;
 var cuadro = "<div class='row'>";
+
 function mostrar() {
     var filtronombre = $("#filtronombre").val();
     var filtrocategoria = $("#filtrocategoria").val();
@@ -56,6 +57,13 @@ function mostrar() {
                 
             }
         }
+        else{
+            if(filtronombre!=""){
+                cuadro = "<h5>Destino Incorrecto</h5> ";
+                
+            }
+            
+        }
         
         /*   if (!( talleres[i].nombre.toLowerCase().includes(filtronombre.toLowerCase())) || !( talleres[i].categoria.includes(filtrocategoria)) && ((filtroExcursion.getTime() > fechaE.getTime()) || (fechaActual>filtroExcursion)) && !(talleres[i].hora.includes(filtroHora)) ){
                //contador=0;
@@ -63,6 +71,7 @@ function mostrar() {
                aja=0;
            }*/
     }
+    
     console.log(cuadro);
     if (cuadro && (talleres.some((taller) => cuadro.includes(taller.nombre)))) {
         ok_comprar = true;
