@@ -35,8 +35,8 @@ function mostrar() {
         let viajeSaleDeOrigen = viaje.origen.includes(filtroorigen)
         let esIdaVuelta = viaje.idaVuelta.includes(filtroida)
         let omnibusConCapacidad = viaje.capacidad>(parseInt(filtroCantPasaj, 10)) || filtroCantPasaj === ""
-        let fechaSalidaValida = (filtroFechaSalida.getTime() === fechaSal.getTime() && fechaActual <= filtroFechaSalida) || $("#fechaSalida").val() === ""
-        let fechaLlegadaValida = filtroFechaRegreso.getTime() === fechaReg.getTime() || $("#fechaRegreso").val() === ""
+        let fechaSalidaValida = (filtroFechaSalida.getTime() === fechaSal.getTime() && fechaActual <= filtroFechaSalida)
+        let fechaLlegadaValida = filtroFechaRegreso.getTime() === fechaReg.getTime()
 
         if (viajeIncluyeNombre && viajeIncluyeServicio && viajeSaleDeOrigen && esIdaVuelta && omnibusConCapacidad && fechaLlegadaValida && fechaSalidaValida) {
             contenedorViajes += agregarViajeAHtml(viaje, map)
