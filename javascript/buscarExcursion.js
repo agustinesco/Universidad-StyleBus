@@ -2,8 +2,10 @@
 window.onload = mostrar();
 var ok_comprar = false;
 var cuadro = "<div class='row'>";
+var not_fecha=false;
 
 function mostrar() {
+    var filtroExcursion = ($("#fechaExc").val());
     var filtronombre = $("#filtronombre").val();
     var filtrocategoria = $("#filtrocategoria").val();
     var filtroHora = $("#filtroHora").val();
@@ -21,9 +23,11 @@ function mostrar() {
 
     //filtrado de búsqueda
     var contador = 0;
-
+if(filtroExcursion!=""){
+    not_fecha=false;
+    var filtroExcursion=new Date(filtroExcursion);
     for (i = 0; i < talleres.length; i++) {
-        var filtroExcursion = new Date($("#fechaExc").val());
+        
 
         var fechaE = new Date(talleres[i].fecha);
         if (talleres[i].nombre.toLowerCase().includes(filtronombre.toLowerCase())) {
@@ -53,17 +57,9 @@ function mostrar() {
                             contador = contador + 1;
                         }
                     }
-                    
-                
             }
         }
-        else{
-            if(filtronombre!=""){
-                cuadro = "<h5>Destino Incorrecto</h5> ";
-                
-            }
-            
-        }
+        
         
         /*   if (!( talleres[i].nombre.toLowerCase().includes(filtronombre.toLowerCase())) || !( talleres[i].categoria.includes(filtrocategoria)) && ((filtroExcursion.getTime() > fechaE.getTime()) || (fechaActual>filtroExcursion)) && !(talleres[i].hora.includes(filtroHora)) ){
                //contador=0;
@@ -71,11 +67,12 @@ function mostrar() {
                aja=0;
            }*/
     }
-    
+}else{
+    not_fecha=true;
+}
     console.log(cuadro);
     if (cuadro && (talleres.some((taller) => cuadro.includes(taller.nombre)))) {
         ok_comprar = true;
-
     }
     else {
         ok_comprar = false;
@@ -88,14 +85,19 @@ function mostrar() {
 
 }
 function comprar() {
-    if (ok_comprar) {
+    if(not_fecha){
+        alert('Debe colocar una fecha');
+    }else{
+        if (ok_comprar) {
 
-        location.href = "carrito.html";
-
+            location.href = "carrito.html";
+    
+        }
+        else {
+            alert('Revisar campos a ingresar');
+        }
     }
-    else {
-        alert('Revisar campos a ingresar');
-    }
+    
 }
 //centrado de mapa con las coordenadas y el id.
 function centrarmapa(var1, var2, var3) {
