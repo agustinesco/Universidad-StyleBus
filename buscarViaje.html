@@ -90,11 +90,11 @@
       <div class=row>
         <div class="col-md-4" ><br>
           <label>Fecha de Salida</label>
-          <input type="date" name="fechaSalida" id="fechaSalida" required>
+          <input type="date" name="fechaSalida" id="fechaSalida" required onchange="mostrar()">
         </div>
         <div class="col-md-4" ><br>
           <label>Fecha de Regreso</label>
-          <input type="date" name="fechaRegreso" id="fechaRegreso" required>
+          <input type="date" name="fechaRegreso" id="fechaRegreso" required onchange="mostrar()">
         </div>
         <div class="col-md-6">
           <select name="filtroorigen" id="filtroorigen" class='form-control' onchange="mostrar()" required>
@@ -127,7 +127,7 @@
               </select>
           </div>
           <div class="col-sm-3"><br>
-            <input type="number" class="form-control" id="filtroCantPasaj" placeholder="Cantidad de Pasajeros" onkeyup="mostrar()" min="1"oninput="this.value = 
+            <input type="number" class="form-control" id="filtroCantPasaj" placeholder="Cantidad de Pasajeros" onchange="mostrar()" min="1"oninput="this.value = 
             !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"> <br>
             </div>
             
@@ -151,7 +151,7 @@
               </div>
             </div>
             <div class="col-md-5" id='columnaArtesanías'> 
-              <div id="verartesanías"></div> <!-- Resultados de mostrar() en buscarArtesanía.js-->
+              <div id="contenedorViajes"></div> <!-- Resultados de mostrar() en buscarArtesanía.js-->
           </div>
         </div>
       </div>
