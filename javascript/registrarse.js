@@ -5,11 +5,15 @@ var nomTarjeta = document.getElementById("nombreTarjeta");
 var numTarjeta = document.getElementById("numTarjeta");
 var fecTarjeta = document.getElementById("fechaTarjeta");
 var codTarjeta = document.getElementById("codTarjeta");
+
+var seleccTarjeta = false;
+var seleccCuenta = false;
 //si apretas en cuentaBancaria..
 
 document.getElementById("categ2").addEventListener("click", function (e) {
     if (cargaDatos.disabled == true) {
         cargaDatos.disabled = false;
+        seleccCuenta=true;
     } else {
         cargaDatos.disabled = true;
     }
@@ -22,6 +26,7 @@ document.getElementById("categ1").addEventListener("click", function (e) {
         numTarjeta.disabled = false;
         fecTarjeta.disabled = false;
         codTarjeta.disabled = false;
+        seleccTarjeta=true;
     } else {
         nomTarjeta.disabled = true;
         numTarjeta.disabled = true;
@@ -68,7 +73,10 @@ function validar() {
     var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var exprContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){7,15}$/;
 
-    if ($('input[type=checkbox]:checked').length === 0) {
+    if (seleccCuenta === true && seleccTarjeta===true) {
+        alert('Solo puede seleccionar un método de pago');
+    } else {
+    if (seleccCuenta === false && seleccTarjeta===false) {
         alert('Debe seleccionar al menos un método de pago');
     } else {
         if (inputNombre.length > 40 || inputNombre.length < 2 || isNaN(inputNombre) == false) {
@@ -98,8 +106,8 @@ function validar() {
                                         if (!expr.test($("#correo").val())) {
                                             alert('Debe ingresar una dirección válida de correo');
                                         } else {
-                                            if (inputContra.length < 7) {
-                                                alert('La contraseña debe tener 7 caracteres como mínimo');
+                                            if (inputContra.length < 7 || inputContra.length > 7) {
+                                                alert('La contraseña debe tener exactamente 7 caracteres');
                                             } else {
                                                 if (!exprContra.test(inputContra)) {
                                                     alert('La contraseña debe tener al menos un caracter especial y una mayúscula');
@@ -114,6 +122,7 @@ function validar() {
                             }
                         }
                     }
+                }
                 }
             }
         }
