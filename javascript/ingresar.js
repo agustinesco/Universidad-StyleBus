@@ -1,21 +1,3 @@
-const users = [{
-    user: "fran@gmail.com",
-    password: "Fr4nalv!"
-},
-{
-    user: "daniel@gmail.com",
-    password: "D@nielr!"
-},
-{
-    user: "sofi@gmail.com",
-    password: "S0f!afer"
-},
-{
-    user: "maria@gmail.com",
-    password: "Mar1al!a"
-}]
-
-
 //funcion que valida que este el mail para recuperar la contraseña
 function validarRecupero() {
     let inputUser =  $("#nombreusuario").val()
@@ -25,7 +7,7 @@ function validarRecupero() {
         alert('Debe ingresar un correo para recuperar la contraseña');
     } else if (!expr.test(inputUser)) {
         alert('Formato de correo inválido');
-    } else if (!( users.some((user) => user.user=== inputUser))) {
+    } else if (!( usuarios.some((user) => user.user=== inputUser))) {
         alert('Ese no es un usuario actual del sistema');
     } else {
         location.href = "recuperarContraseña.html";
@@ -43,8 +25,10 @@ function validar() {
     let contraseñaLargoIncorrecto = inputPass.length !== 8
     let usuarioFormatoIncorrecto = !exprUsuario.test(inputUser)
     let contraFormatoIncorrecto = !exprContra.test(inputPass)
-    let usuarioNoEncontrado = !( users.some((user) => user.user=== inputUser&& user.password===inputPass))
+    let usuarioNoEncontrado = !( usuarios.some((user) => user.correo=== inputUser && user.contraseña === inputPass))
   
+
+
     if (usaurioOContraceñaVacio) {
         alert('El usuario y la contraseña son obligatorios');
     } else if (contraseñaLargoIncorrecto) {
