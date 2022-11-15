@@ -34,9 +34,9 @@ function mostrar() {
         let viajeIncluyeServicio = viaje.tipoDeServicio.includes(filtroservicio)
         let viajeSaleDeOrigen = viaje.origen.includes(filtroorigen)
         let esIdaVuelta = viaje.idaVuelta.includes(filtroida)
-        let omnibusConCapacidad = viaje.capacidad>(parseInt(filtroCantPasaj, 10)) || filtroCantPasaj === ""
+        let omnibusConCapacidad = viaje.capacidad>(parseInt(filtroCantPasaj, 10)) 
         let fechaSalidaValida = (filtroFechaSalida.getTime() === fechaSal.getTime() && fechaActual <= filtroFechaSalida)
-        let fechaLlegadaValida = filtroFechaRegreso.getTime() === fechaReg.getTime()
+        let fechaLlegadaValida = filtroFechaRegreso.getTime() === fechaReg.getTime() && filtroFechaRegreso.getTime() > filtroFechaSalida.getTime()
 
         if (viajeIncluyeNombre && viajeIncluyeServicio && viajeSaleDeOrigen && esIdaVuelta && omnibusConCapacidad && fechaLlegadaValida && fechaSalidaValida) {
             contenedorViajes += agregarViajeAHtml(viaje, map)
@@ -48,7 +48,6 @@ function mostrar() {
         contenedorViajes = "<h5>Sin Resultados</h5> ";
     }
     contenedorViajes += "</div>"
-    console.log(contenedorViajes)
     document.getElementById("contenedorViajes").innerHTML = contenedorViajes;
 }
 
