@@ -4,7 +4,7 @@ var usuarios = [{
     nombre: "Francisco",
     apellido: "Alvarez",
     correo: "fran@gmail.com",
-    contraseña: "Fr@nc1s!"    
+    contraseña: "Fr4nalv!"    
   },
   {
     id: 2,
