@@ -8,7 +8,7 @@ var usuarios = [{
   },
   {
     id: 2,
-    nombre: "Daniel",
+    nombre: "Juan",
     apellido: "Rabinovich",
     correo: "daniel@gmail.com",
     contraseña: "Dan1e!ra"
